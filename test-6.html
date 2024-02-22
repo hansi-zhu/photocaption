@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: black; /* Set the default background color to black */
+    }
+  </style>
+</head>
+<body>
+  <script>
+    let randomLineY;
+    let redLineSpeed = 0.5; // Adjust the speed of the red line
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      randomLineY = height / 2; // Initialize the random line's Y-coordinate
+    }
+
+    function draw() {
+      background(0); // Set the background color to black
+
+      // Triple the stroke weight of the lines
+      stroke(255,0,0); // Set the stroke color to white
+      strokeWeight(3);
+
+      // Draw a line from the left end to the center of the page, following the y-coordinate of the mouse
+      let mouseXLine = windowWidth / 2;
+      line(0, mouseY, mouseXLine, mouseY);
+
+      // Draw a red line from the center of the page to the right end, moving up and down randomly
+      stroke(255,0,0); // Set stroke color to red
+      randomLineY += redLineSpeed * random(-5, 5); // Move the line up or down at a slower pace
+      randomLineY = constrain(randomLineY, 0, windowHeight); // Constrain the Y-coordinate to stay within the canvas
+      line(mouseXLine, randomLineY, windowWidth, randomLineY);
+
+      // Check if the absolute difference between the two x-coordinates is within one integer
+      if (abs(mouseY - randomLineY) <= 1) {
+        // If they are, change the background color to blue
+        background(0,0,255);
+        stroke(255);
+      }
+    }
+    
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+
+  </script>
+</body>
+</html>

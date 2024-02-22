@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="clickableDiv" data-audio="audio/childhood-memories.mp3"><img src="hanyu.png"></div>
+
+        <script>
+            const clickableDivs = document.querySelectorAll('.clickableDiv');
+            const audioPlayer = document.querySelector('.audioPlayer');
+        
+            clickableDivs.forEach(function (div) {
+                div.addEventListener('click', function () {
+                    const audioFile = div.getAttribute('data-audio');
+
+                    if (audioPlayer.src !== audioFile) {
+                        audioPlayer.src = audioFile;
+                        audioPlayer.play();
+                    } else if (audioPlayer.paused) {
+                        audioPlayer.play();
+                    } else {
+                        audioPlayer.pause();
+                    }
+                });
+            });
+        </script>
+</body>
+</html>
+
