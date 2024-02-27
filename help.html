@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-color: blue;
+    }
+.hide {
+  display: none;
+  position:fixed;
+  top:5%;
+}
+
+.myDIV{
+    height:50px;
+    width:400px;
+    background-color:blue;
+    position:fixed;
+    top:50%;
+}
+    
+.myDIV:hover + .hide {
+  display: block;
+  color: white;
+  position:fixed;
+  top:50%;
+}
+</style>
+</head>
+<body>
+
+<div class="myDIV"></div>
+<div class="hide">I am shown when someone hovers over the div above.</div>
+
+</body>
+</html>

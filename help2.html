@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-color: blue;
+    }
+    h2{
+        font-size: 48pt;
+        font-family: sans-serif;
+        font-weight:normal;
+    }
+.hide {
+  display: none;
+  position:fixed;
+  top:20vh;
+  left:50%;
+  transform: translate(-50%,-50%)
+}
+
+.box{
+    height:100px;
+    width:100px;
+    background-color:yellow;
+    position:fixed;
+    top:50%;
+    border-radius: 100%;
+    left:2.5%;
+}
+    
+.box:hover + .hide {
+  display: block;
+  color: white;
+  position:fixed;
+  top:15%;
+}
+#one{
+    left:10%;
+}
+
+#one:hover+ .hide{
+    display: block;
+  color: white;
+  position:fixed;
+  top:15%;
+}
+
+#two:hover+ .hide{
+    display: block;
+  color: white;
+  position:fixed;
+  top:15%;
+}
+
+#two{
+    left:18%;
+}
+#three:hover+ .hide{
+    display: block;
+  color: white;
+  position:fixed;
+  top:15%;
+}
+
+#three{
+    left:26%;
+}
+
+.box:hover+ .hide{
+display: block;
+  color: white;
+  position:fixed;
+  top:15%;
+}
+#four{
+    left:35%;
+}
+</style>
+</head>
+<body>
+
+<div class="box" id="one">1</div>
+<div class="hide"><h2>find</h2></div>
+
+<div class="box" id="two">2</div>
+<div class="hide" ><h2>align</h2></div>
+
+<div class="box" id="three">3</div>
+<div class="hide" ><h2>chase</h2></div>
+
+<div class="box" id="four">4</div>
+<div class="hide"><h2>practice</h2></div>
+
+</body>
+</html>
