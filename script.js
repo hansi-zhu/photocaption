@@ -2,7 +2,7 @@ let img;
 let smallPoint, largePoint;
 
 function preload() {
-  img = loadImage('./hanyu.png');
+  img = loadImage('cut/hanyu.png');
   image(img, 100, 500, 1046,1400);
 
 }

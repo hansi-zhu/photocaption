@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my house</title>
+    <style>
+        body {
+            background: #009688;
+            overflow: hidden;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .circle-container {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: ellipse(50% 100% at 50% 100%);
+            background: #009688;
+        }
+
+        .loop-wrapper {
+            margin: 0 auto;
+            position: relative;
+            display: block;
+            width: 600px;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 3px solid #fff;
+            color: #fff;
+        }
+
+        /* ... (rest of your existing CSS) */
+
+        .text-inside-circle {
+            position: absolute;
+            color: white;
+            font-size: 2em;
+            z-index: 2; /* Ensure it's above the blue circle */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle-container">
+        <div class="circle-mask"></div>
+        <div class="loop-wrapper">
+            <div class="mountain"></div>
+            <div class="hill"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="rock"></div>
+            <div class="truck"></div>
+            <div class="wheels"></div>
+        </div>
+        <div class="text-inside-circle">THE WHEEL</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>erase</title>
+  <meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+const barWidth = 20;
+let lastBar = -1;
+
+function setup() {
+  createCanvas(1920, 1080);
+  colorMode(HSB, height, height, height);
+  noStroke();
+  background(0);
+}
+
+function draw() {
+  let whichBar = mouseX / barWidth;
+  if (whichBar !== lastBar) {
+    let barX = whichBar * barWidth;
+    fill(mouseY, height, height);
+    rect(barX, 0, barWidth, height);
+    lastBar = whichBar;
+  }
+}
+
+</script>
+</body>

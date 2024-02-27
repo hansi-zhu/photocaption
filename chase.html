@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>chasing love</title>
+    <title>chasing</title>
   <meta charset="UTF-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <style>
@@ -22,6 +22,8 @@
     let accelX = 0.0, accelY = 0.0;
     let deltaX = 0.0, deltaY = 0.0;
     let springing = 0.0009, damping = 0.98;
+
+    let blobcolor = 225;
 
     let nodes = 5;
     let nodeStartX = [];
@@ -63,8 +65,11 @@
 
       if (touching) {
         background(0, 0, 255); // Set background to blue when touching
+        blobcolor = [255, 0, 0]; 
       } else {
         background(0, 100);
+        blobcolor = [255, 255, 255]; 
+
       }
 
       if (touching) {
@@ -150,7 +155,7 @@
       }
 
       curveTightness(organicConstant);
-      fill(255);
+      fill(blobcolor);
       beginShape();
       for (let i = 0; i < nodes; i++) {
         curveVertex(nodeX[i], nodeY[i]);

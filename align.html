@@ -8,9 +8,21 @@
       margin: 0;
       background-color: black; /* Set the default background color to black */
     }
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      display: none;
+      font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
   </style>
 </head>
 <body>
+    <div id="text">I've never created for anyone but you</div>
   <script>
     let randomLineY;
     let redLineSpeed = 0.5; // Adjust the speed of the red line
@@ -42,6 +54,9 @@
         // If they are, change the background color to blue
         background(0,0,255);
         stroke(255);
+        document.getElementById('text').style.display = 'block';
+      } else {
+             document.getElementById('text').style.display = 'none';
       }
     }
     
